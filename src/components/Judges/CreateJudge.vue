@@ -1,14 +1,14 @@
 <template>
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <h3 class="text-center">Update Student</h3>
-      <form @submit.prevent="handleUpdateForm">
+      <h3 class="text-center">Create Judge</h3>
+      <form @submit.prevent="handleSubmitForm">
         <div class="form-group">
           <label>Name</label>
           <input
             type="text"
             class="form-control"
-            v-model="student.name"
+            v-model="Judge.name"
             required
           />
         </div>
@@ -18,7 +18,7 @@
           <input
             type="email"
             class="form-control"
-            v-model="student.email"
+            v-model="Judge.email"
             required
           />
         </div>
@@ -28,13 +28,13 @@
           <input
             type="text"
             class="form-control"
-            v-model="student.phone"
+            v-model="Judge.phone"
             required
           />
         </div>
 
         <div class="form-group">
-          <button class="btn btn-danger btn-block">Update</button>
+          <button class="btn btn-danger btn-block">Create</button>
         </div>
       </form>
     </div>
@@ -47,25 +47,26 @@ import axios from "axios";
 export default {
   data() {
     return {
-      student: {},
+      Judge: {
+        name: "",
+        email: "",
+        phone: "",
+      },
     };
   },
-  created() {
-    let apiURL = `http://localhost:4000/api/edit-student/${this.$route.params.id}`;
-
-    axios.get(apiURL).then((res) => {
-      this.student = res.data;
-    });
-  },
   methods: {
-    handleUpdateForm() {
-      let apiURL = `http://localhost:4000/api/update-student/${this.$route.params.id}`;
+    handleSubmitForm() {
+      let apiURL = "https://e16d-105-163-2-54.ngrok.io/api/create-Judge";
 
       axios
-        .put(apiURL, this.student)
-        .then((res) => {
-          console.log(res);
-          this.$router.push("/view");
+        .post(apiURL, this.Judge)
+        .then(() => {
+          this.$router.push("/view-judge");
+          this.Judge = {
+            name: "",
+            email: "",
+            phone: "",
+          };
         })
         .catch((error) => {
           console.log(error);
@@ -74,4 +75,3 @@ export default {
   },
 };
 </script>
-n

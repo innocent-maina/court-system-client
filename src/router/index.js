@@ -7,17 +7,54 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import('../components/CreateComponent'),
+    component: () => import('../components/Home'),
   },
   {
-    path: '/view',
-    name: 'view',
-    component: () => import('../components/ListComponent'),
+    path: '/view-case',
+    name: 'viewCase',
+    component: () => import('../components/Cases/ListCase'),
   },
   {
-    path: '/edit/:id',
-    name: 'edit',
-    component: () => import('../components/EditComponent'),
+    path: '/edit-case/:id',
+    name: 'editCase',
+    component: () => import('../components/Cases/EditCase'),
+  },
+  {
+    path: '/create-case',
+    name: 'createCase',
+    component: () => import('../components/Cases/CreateCase'),
+  },
+
+  {
+    path: '/create-judge',
+    name: 'createJudge',
+    component: () => import('../components/Judges/CreateJudge'),
+  },
+  {
+    path: '/view-judge',
+    name: 'viewJudge',
+    component: () => import('../components/Judges/ListJudge'),
+  },
+  {
+    path: '/edit-judge/:id',
+    name: 'editJudge',
+    component: () => import('../components/Judges/EditJudge'),
+  },
+
+  {
+    path: '/create-user',
+    name: 'createUser',
+    component: () => import('../components/Users/CreateUser'),
+  },
+  {
+    path: '/view-user',
+    name: 'viewUser',
+    component: () => import('../components/Users/ListUser'),
+  },
+  {
+    path: '/edit-user/:id',
+    name: 'editUser',
+    component: () => import('../components/Users/EditUser'),
   },
 ]
 

@@ -8,12 +8,15 @@
         <a class="navbar-brand float-left">Courtcase Management System</a>
         <ul class="nav navbar-nav flex-row float-right">
           <li class="nav-item">
-            <router-link class="nav-link pr-3" to="/"
-              >Create Student&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <router-link class="nav-link pr-3" to="/view-judge"
+              >Judges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/view">View Students</router-link>
+            <router-link class="nav-link" to="/view-case">Cases&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/view-user">Users&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</router-link>
           </li>
         </ul>
       </div>

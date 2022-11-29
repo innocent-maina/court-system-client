@@ -1,5 +1,11 @@
 <template>
-  <div class="row">
+  <div>
+    <router-link
+      :to="{ name: 'createUser'}"
+      class="btn btn-success"
+      >Create User
+    </router-link>
+    <div class="row">
     <div class="col-md-12">
       <table class="table table-striped">
         <thead class="thead-dark">
@@ -11,18 +17,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="student in Students" :key="student._id">
-            <td>{{ student.name }}</td>
-            <td>{{ student.email }}</td>
-            <td>{{ student.phone }}</td>
+          <tr v-for="user in Users" :key="user._id">
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
             <td>
               <router-link
-                :to="{ name: 'edit', params: { id: student._id } }"
+                :to="{ name: 'editUser', params: { id: user._id } }"
                 class="btn btn-success"
                 >Edit
               </router-link>
               <button
-                @click.prevent="deleteStudent(student._id)"
+                @click.prevent="deleteUser(user._id)"
                 class="btn btn-danger"
               >
                 Delete
@@ -33,6 +39,7 @@
       </table>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -41,30 +48,30 @@ import axios from "axios";
 export default {
   data() {
     return {
-      Students: [],
+      Users: [],
     };
   },
   created() {
-    let apiURL = "http://localhost:4000/api";
+    let apiURL = "https://e16d-105-163-2-54.ngrok.io/api/get-users";
     axios
       .get(apiURL)
       .then((res) => {
-        this.Students = res.data;
+        this.Users = res.data;
       })
       .catch((error) => {
         console.log(error);
       });
   },
   methods: {
-    deleteStudent(id) {
-      let apiURL = `http://localhost:4000/api/delete-student/${id}`;
-      let indexOfArrayItem = this.Students.findIndex((i) => i._id === id);
+    deleteUser(id) {
+      let apiURL = `https://e16d-105-163-2-54.ngrok.io/api/delete-user/${id}`;
+      let indexOfArrayItem = this.Users.findIndex((i) => i._id === id);
 
       if (window.confirm("Do you really want to delete?")) {
         axios
           .delete(apiURL)
           .then(() => {
-            this.Students.splice(indexOfArrayItem, 1);
+            this.Users.splice(indexOfArrayItem, 1);
           })
           .catch((error) => {
             console.log(error);
