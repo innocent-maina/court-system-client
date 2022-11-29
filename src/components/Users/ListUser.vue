@@ -52,7 +52,7 @@ export default {
     };
   },
   created() {
-    let apiURL = "https://e16d-105-163-2-54.ngrok.io/api/get-users";
+    let apiURL = "https://17a7-105-163-2-54.ngrok.io/api/get-users";
     axios
       .get(apiURL)
       .then((res) => {
@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     deleteUser(id) {
-      let apiURL = `https://e16d-105-163-2-54.ngrok.io/api/delete-user/${id}`;
+      let apiURL = `https://17a7-105-163-2-54.ngrok.io/api/delete-user/${id}`;
       let indexOfArrayItem = this.Users.findIndex((i) => i._id === id);
 
       if (window.confirm("Do you really want to delete?")) {

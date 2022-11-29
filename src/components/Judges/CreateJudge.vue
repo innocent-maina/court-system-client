@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     handleSubmitForm() {
-      let apiURL = "https://e16d-105-163-2-54.ngrok.io/api/create-Judge";
+      let apiURL = "https://17a7-105-163-2-54.ngrok.io/api/create-Judge";
 
       axios
         .post(apiURL, this.Judge)
