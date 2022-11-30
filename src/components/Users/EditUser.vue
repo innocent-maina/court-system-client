@@ -51,7 +51,7 @@ export default {
     };
   },
   created() {
-    let apiURL = `https://5f92-105-163-2-54.ngrok.io/api/edit-user/${this.$route.params.id}`;
+    let apiURL = `https://ff37-105-163-2-54.ngrok.io/api/edit-user/${this.$route.params.id}`;
 
     axios.get(apiURL).then((res) => {
       this.user = res.data;
@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     handleUpdateForm() {
-      let apiURL = `https://5f92-105-163-2-54.ngrok.io/api/update-user/${this.$route.params.id}`;
+      let apiURL = `https://ff37-105-163-2-54.ngrok.io/api/update-user/${this.$route.params.id}`;
 
       axios
         .put(apiURL, this.user)

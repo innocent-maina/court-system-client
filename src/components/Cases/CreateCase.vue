@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     handleSubmitForm() {
-      let apiURL = "https://5f92-105-163-2-54.ngrok.io/api/create-case";
+      let apiURL = "https://ff37-105-163-2-54.ngrok.io/api/create-case";
 
       axios
         .post(apiURL, this.student)

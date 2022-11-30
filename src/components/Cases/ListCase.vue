@@ -52,7 +52,7 @@ export default {
     };
   },
   created() {
-    let apiURL = "https://5f92-105-163-2-54.ngrok.io/api/get-cases";
+    let apiURL = "https://ff37-105-163-2-54.ngrok.io/api/get-cases";
     axios
       .get(apiURL)
       .then((res) => {
@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     deleteStudent(id) {
-      let apiURL = `https://5f92-105-163-2-54.ngrok.io/api/delete-case/${id}`;
+      let apiURL = `https://ff37-105-163-2-54.ngrok.io/api/delete-case/${id}`;
       let indexOfArrayItem = this.Students.findIndex((i) => i._id === id);
 
       if (window.confirm("Do you really want to delete?")) {
