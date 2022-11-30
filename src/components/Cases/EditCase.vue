@@ -51,7 +51,7 @@ export default {
     };
   },
   created() {
-    let apiURL = `https://17a7-105-163-2-54.ngrok.io/api/edit-case/${this.$route.params.id}`;
+    let apiURL = `https://5f92-105-163-2-54.ngrok.io/api/edit-case/${this.$route.params.id}`;
 
     axios.get(apiURL).then((res) => {
       this.student = res.data;
@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     handleUpdateForm() {
-      let apiURL = `https://17a7-105-163-2-54.ngrok.io/api/update-case/${this.$route.params.id}`;
+      let apiURL = `https://5f92-105-163-2-54.ngrok.io/api/update-case/${this.$route.params.id}`;
 
       axios
         .put(apiURL, this.student)
