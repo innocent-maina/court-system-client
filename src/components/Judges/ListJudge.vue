@@ -52,7 +52,7 @@ export default {
     };
   },
   created() {
-    let apiURL = "https://ff37-105-163-2-54.ngrok.io/api/get-judges";
+    let apiURL = "https://31c8-105-163-2-54.ngrok.io/api/get-judges";
     axios
       .get(apiURL)
       .then((res) => {
@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     deleteJudge(id) {
-      let apiURL = `https://ff37-105-163-2-54.ngrok.io/api/delete-judge/${id}`;
+      let apiURL = `https://31c8-105-163-2-54.ngrok.io/api/delete-judge/${id}`;
       let indexOfArrayItem = this.Judges.findIndex((i) => i._id === id);
 
       if (window.confirm("Do you really want to delete?")) {

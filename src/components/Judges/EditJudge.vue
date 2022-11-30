@@ -51,7 +51,7 @@ export default {
     };
   },
   created() {
-    let apiURL = `https://ff37-105-163-2-54.ngrok.io/api/edit-judge/${this.$route.params.id}`;
+    let apiURL = `https://31c8-105-163-2-54.ngrok.io/api/edit-judge/${this.$route.params.id}`;
 
     axios.get(apiURL).then((res) => {
       this.judge = res.data;
@@ -59,7 +59,7 @@ export default {
   },
   methods: {
     handleUpdateForm() {
-      let apiURL = `https://ff37-105-163-2-54.ngrok.io/api/update-judge/${this.$route.params.id}`;
+      let apiURL = `https://31c8-105-163-2-54.ngrok.io/api/update-judge/${this.$route.params.id}`;
 
       axios
         .put(apiURL, this.judge)
